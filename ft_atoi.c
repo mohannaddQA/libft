@@ -1,13 +1,23 @@
-int	skip_spaces(const char *nptr, int *i)
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mabuqare  <marvin@42.fr>                   +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/08/07 23:48:48 by mabuqare          #+#    #+#             */
+/*   Updated: 2025/08/12 00:08:58 by mabuqare         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+static int	skip_spaces(const char *nptr, int *i)
 {
 	while (nptr[*i] && (nptr[*i] == 32 || (nptr[*i] >= 9 && nptr[*i] <= 13)))
-	{
 		(*i)++;
-	}
 	return (0);
 }
 
-int	sign_state(const char *nptr, int *i)
+static int	sign_state(const char *nptr, int *i)
 {
 	int	sign;
 
@@ -39,4 +49,3 @@ int	ft_atoi(const char *nptr)
 	}
 	return (result * sign);
 }
-// Note that we must define nptr parameter as const becasue we are passing it as a const value 

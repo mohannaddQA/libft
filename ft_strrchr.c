@@ -1,19 +1,29 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mabuqare  <marvin@42.fr>                   +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/08/07 23:51:45 by mabuqare          #+#    #+#             */
+/*   Updated: 2025/08/12 02:06:54 by mabuqare         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "libft.h"
+
 char	*ft_strrchr(const char *s, int c)
 {
-	// move the pointer exactly to the last character
-	while (*(s + 1) != '\0')
-		s++;
-	// Move along the string characters from the back 
+	char	*last_occ;
+
+	last_occ = NULL;
 	while (*s != '\0')
 	{
 		if (*s == c)
-			return ((char *)s);
-		s--;
+			last_occ = (char *)s;
+		s++;
 	}
-	return ('\0');
+	if (*s == c)
+		return ((char *)s);
+	return (last_occ);
 }
-/*
-To match the return type and avoid warnings:
-Cast the (const char *) to (char *) read this: 
-stackoverflow.com/questions/2316387/initialization-discards-qualifiers-from-pointer-target-type
-*/

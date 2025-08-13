@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mabuqare  <marvin@42.fr>                   +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/08/07 23:51:48 by mabuqare          #+#    #+#             */
+/*   Updated: 2025/08/10 18:27:39 by mabuqare         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-void	fill_ascii_array(int *arr, char const *set)
+static void	fill_ascii_array(int *arr, char const *set)
 {
 	ft_bzero(arr, 128 * sizeof(int));
 	while (*set)
@@ -11,30 +23,25 @@ void	fill_ascii_array(int *arr, char const *set)
 	}
 }
 
-
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	int	ascii[128];
-	int		len;
-	char	*trimmed_str;
+	int			ascii[128];
+	int			len;
+	char		*trimmed_str;
 
 	if (!s1 || !set)
 		return (NULL);
 	fill_ascii_array(ascii, set);
 	while (ascii[(int)*s1])
 		s1++;
-	len = ft_strlen((char *)s1); // find new lenght
+	if (!*s1)
+		return ("");
+	len = ft_strlen((char *)s1);
 	while (ascii[(int)s1[len - 1]])
 		len--;
 	trimmed_str = malloc(sizeof(char) * (len + 1));
 	if (!trimmed_str)
 		return (NULL);
-	ft_strlcpy(trimmed_str, s1,len + 1);
+	ft_strlcpy(trimmed_str, s1, len + 1);
 	return (trimmed_str);
 }
-
-// skip front and stop at the first char not in the set
-// Find the len of the new string 
-// skip from back using the new len and stop at the first char not in the set
-// Now you have a start and a lenght where to stop
-// malloc the lenght and use strlcpy

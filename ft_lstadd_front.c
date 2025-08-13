@@ -1,34 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mabuqare  <marvin@42.fr>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/29 01:36:50 by mabuqare          #+#    #+#             */
-/*   Updated: 2025/08/09 15:01:18 by mabuqare         ###   ########.fr       */
+/*   Created: 2025/08/12 14:22:44 by mabuqare          #+#    #+#             */
+/*   Updated: 2025/08/12 23:17:28 by mabuqare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcat(char *dst, char *src, size_t size)
+void	ft_lstadd_front(t_list **lst, t_list *new)
 {
-	size_t	i;
-	size_t	finallen;
-
-	i = 0;
-	if (size == 0 || size <= ft_strlen(dst))
-		return (ft_strlen(src) + size);
-	if (size > ft_strlen(dst))
-		finallen = ft_strlen(src) + ft_strlen(dst);
-	while (dst[i])
-		i++;
-	while (*src && i < size - 1)
-	{
-		dst[i++] = *src;
-		src++;
-	}
-	dst[i] = '\0';
-	return (finallen);
+	if (!new)
+		return ;
+	(*new).next = *lst;
+	*lst = new;
 }

@@ -1,4 +1,16 @@
-include "libft.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mabuqare  <marvin@42.fr>                   +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/08/07 23:51:07 by mabuqare          #+#    #+#             */
+/*   Updated: 2025/08/13 09:47:45 by mabuqare         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "libft.h"
 
 void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
@@ -8,5 +20,8 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 		return ;
 	i = 0;
 	while (s[i])
-		f(i, &s[i++]);
+	{
+		f(i, &s[i]);
+		i++;
+	}
 }

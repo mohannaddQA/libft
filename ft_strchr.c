@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mabuqare  <marvin@42.fr>                   +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/08/07 23:50:55 by mabuqare          #+#    #+#             */
+/*   Updated: 2025/08/09 15:37:43 by mabuqare         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 char	*ft_strchr(const char *s, int c)
@@ -8,10 +20,7 @@ char	*ft_strchr(const char *s, int c)
 			return ((char *)s);
 		s++;
 	}
-	return ('\0');
+	if (*s == c)
+		return ((char *)s);
+	return (NULL);
 }
-/*
-To match the return type and avoid warnings:
-Cast the (const char *) to (char *) read this: 
-stackoverflow.com/questions/2316387/initialization-discards-qualifiers-from-pointer-target-type
-*/
