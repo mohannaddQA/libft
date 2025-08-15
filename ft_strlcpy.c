@@ -6,7 +6,7 @@
 /*   By: mabuqare  <marvin@42.fr>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/26 19:26:23 by mabuqare          #+#    #+#             */
-/*   Updated: 2025/08/08 00:07:39 by mabuqare         ###   ########.fr       */
+/*   Updated: 2025/08/15 15:16:25 by mabuqare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
 	size_t	srclen;
 
-	srclen = ft_strlen((char *)src);
+	srclen = ft_strlen(src);
 	if (dstsize == 0)
 		return (srclen);
 	while (*src && (dstsize-- > 1))
@@ -24,3 +24,10 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 	*dst = '\0';
 	return (srclen);
 }
+
+/*
+Takes the total buffer size: 
+Buffer = 0 --> nothing to copy
+Buffer > 0 --> Copy src till it (or buffer) finishes
+return the string we tried to copy (srclen) 
+*/

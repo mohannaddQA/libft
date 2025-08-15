@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mabuqare  <marvin@42.fr>                   +#+  +:+       +#+        */
+/*   By: mabuqare <mabuqare@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/07 23:51:48 by mabuqare          #+#    #+#             */
-/*   Updated: 2025/08/10 18:27:39 by mabuqare         ###   ########.fr       */
+/*   Updated: 2025/08/14 23:06:17 by mabuqare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 	while (ascii[(int)*s1])
 		s1++;
 	if (!*s1)
-		return ("");
-	len = ft_strlen((char *)s1);
+		return (ft_strdup(""));
+	len = ft_strlen(s1);
 	while (ascii[(int)s1[len - 1]])
 		len--;
 	trimmed_str = malloc(sizeof(char) * (len + 1));

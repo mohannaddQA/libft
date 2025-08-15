@@ -6,7 +6,7 @@
 /*   By: mabuqare  <marvin@42.fr>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/07 23:51:35 by mabuqare          #+#    #+#             */
-/*   Updated: 2025/08/12 02:03:58 by mabuqare         ###   ########.fr       */
+/*   Updated: 2025/08/15 15:17:16 by mabuqare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,9 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	int		i;
 	char	*s_modified;
 
-	if (!s)
+	if (!s || !f)
 		return (NULL);
-	s_modified = malloc(sizeof(char) * (ft_strlen((char *)s)) + 1);
+	s_modified = malloc(sizeof(char) * (ft_strlen(s)) + 1);
 	if (!s_modified)
 		return (NULL);
 	i = 0;

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mabuqare  <marvin@42.fr>                   +#+  +:+       +#+        */
+/*   By: mabuqare <mabuqare@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/07 23:51:45 by mabuqare          #+#    #+#             */
-/*   Updated: 2025/08/12 02:06:54 by mabuqare         ###   ########.fr       */
+/*   Updated: 2025/08/14 23:05:46 by mabuqare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,18 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	char	*last_occ;
+	char			*last;
+	unsigned char	ch;
 
-	last_occ = NULL;
+	ch = (unsigned char)c;
+	last = NULL;
 	while (*s != '\0')
 	{
-		if (*s == c)
-			last_occ = (char *)s;
+		if (*s == ch)
+			last = (char *)s;
 		s++;
 	}
-	if (*s == c)
+	if (*s == ch)
 		return ((char *)s);
-	return (last_occ);
+	return (last);
 }

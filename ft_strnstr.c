@@ -6,7 +6,7 @@
 /*   By: mabuqare  <marvin@42.fr>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/07 23:51:42 by mabuqare          #+#    #+#             */
-/*   Updated: 2025/08/12 01:45:20 by mabuqare         ###   ########.fr       */
+/*   Updated: 2025/08/15 15:46:53 by mabuqare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,6 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	i = 0;
 	if (!*little)
 		return ((char *)(big));
-	if (!big || !len)
-		return (NULL);
 	while (big[i] && i < len)
 	{
 		j = 0;

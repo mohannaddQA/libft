@@ -1,21 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
+/*   ft_lstlast_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mabuqare  <marvin@42.fr>                   +#+  +:+       +#+        */
+/*   By: mabuqare <mabuqare@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/12 20:02:09 by mabuqare          #+#    #+#             */
-/*   Updated: 2025/08/12 20:33:55 by mabuqare         ###   ########.fr       */
+/*   Created: 2025/08/12 16:17:45 by mabuqare          #+#    #+#             */
+/*   Updated: 2025/08/14 23:03:43 by mabuqare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstdelone(t_list *lst, void (*del)(void*))
+t_list	*ft_lstlast(t_list *lst)
 {
-	if (!lst || !del)
-		return ;
-	del(lst->content);
-	free(lst);
+	while (lst)
+	{
+		if (!(lst -> next))
+			return (lst);
+		lst = lst -> next;
+	}
+	return (lst);
 }

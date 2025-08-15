@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mabuqare  <marvin@42.fr>                   +#+  +:+       +#+        */
+/*   By: mabuqare <mabuqare@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/08 22:52:07 by mabuqare          #+#    #+#             */
-/*   Updated: 2025/08/13 14:36:25 by mabuqare         ###   ########.fr       */
+/*   Updated: 2025/08/14 23:05:11 by mabuqare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,16 +110,3 @@ void	*ft_free(char **arr, int count)
 	free(arr);
 	return (NULL);
 }
-
-// int main()
-// {
-// 	int i = 0;
-// 	char **tabstr = ft_split("lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse", ' ') ;
-	
-// 	while (tabstr[i] != NULL)
-// 	{
-// 		printf("%s\n",tabstr[i]);
-// 		i++;
-// 	}
-		
-// }

@@ -6,7 +6,7 @@
 /*   By: mabuqare  <marvin@42.fr>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/29 01:36:50 by mabuqare          #+#    #+#             */
-/*   Updated: 2025/08/09 15:01:18 by mabuqare         ###   ########.fr       */
+/*   Updated: 2025/08/15 15:16:22 by mabuqare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,10 @@ size_t	ft_strlcat(char *dst, char *src, size_t size)
 	size_t	finallen;
 
 	i = 0;
-	if (size == 0 || size <= ft_strlen(dst))
-		return (ft_strlen(src) + size);
-	if (size > ft_strlen(dst))
-		finallen = ft_strlen(src) + ft_strlen(dst);
+	if (size == 0 || size <= ft_strlen((const char *)dst))
+		return (ft_strlen((const char *)src) + size);
+	if (size > ft_strlen((const char *)dst))
+		finallen = ft_strlen((const char *)src) + ft_strlen((const char *)dst);
 	while (dst[i])
 		i++;
 	while (*src && i < size - 1)
@@ -32,3 +32,13 @@ size_t	ft_strlcat(char *dst, char *src, size_t size)
 	dst[i] = '\0';
 	return (finallen);
 }
+
+/*
+Takes the total buffer size: 
+Buffer = 0 --> nothing to copy
+Buffer = destlen --> nothing to copy
+Buffer < destlen --> nothing to copy
+return strlen + buffer size (the string we tried to create)
+Buffer > destlen --> somthing to copy
+return destlen + srclen (the string we tried to create)
+*/

@@ -1,24 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstlast.c                                       :+:      :+:    :+:   */
+/*   ft_lstadd_back_bonus.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mabuqare  <marvin@42.fr>                   +#+  +:+       +#+        */
+/*   By: mabuqare <mabuqare@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/12 16:17:45 by mabuqare          #+#    #+#             */
-/*   Updated: 2025/08/12 20:13:01 by mabuqare         ###   ########.fr       */
+/*   Created: 2025/08/12 16:26:23 by mabuqare          #+#    #+#             */
+/*   Updated: 2025/08/14 23:03:27 by mabuqare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_lstlast(t_list *lst)
+void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	while (lst)
+	t_list	*temp;
+
+	if (!lst || !new)
+		return ;
+	if (!*lst)
 	{
-		if (!(lst -> next))
-			return (lst);
-		lst = lst -> next;
+		*lst = new;
+		return ;
 	}
-	return (lst);
+	temp = *lst;
+	while (temp)
+	{
+		if (!(temp->next))
+		{
+			(temp)->next = new;
+			return ;
+		}
+		(temp) = (temp)->next;
+	}
 }

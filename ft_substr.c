@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mabuqare  <marvin@42.fr>                   +#+  +:+       +#+        */
+/*   By: mabuqare <mabuqare@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/07 23:51:52 by mabuqare          #+#    #+#             */
-/*   Updated: 2025/08/12 02:13:46 by mabuqare         ###   ########.fr       */
+/*   Updated: 2025/08/14 23:06:19 by mabuqare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,19 +15,18 @@
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*sub_str;
+	size_t	actual_len;
 
 	if (!s)
 		return (NULL);
-	if (start >= ft_strlen((char *)s))
+	if (start >= ft_strlen(s))
 		return (ft_strdup(""));
-	sub_str = (char *) malloc((sizeof(char)) * (len + 1));
+	actual_len = ft_strlen(s) - start;
+	if (len < actual_len)
+		actual_len = len;
+	sub_str = (char *)malloc((sizeof(char)) * (actual_len + 1));
 	if (!sub_str)
 		return (NULL);
-	ft_strlcpy(sub_str, (char *)&s[start], len + 1);
+	ft_strlcpy(sub_str, (char *)&s[start], actual_len + 1);
 	return (sub_str);
 }
-
-// int main()
-// {
-// 	printf("%s", ft_substr("hello", 0, 2));
-// }

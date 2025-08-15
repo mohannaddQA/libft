@@ -6,7 +6,7 @@
 /*   By: mabuqare  <marvin@42.fr>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/07 23:52:09 by mabuqare          #+#    #+#             */
-/*   Updated: 2025/08/13 10:39:40 by mabuqare         ###   ########.fr       */
+/*   Updated: 2025/08/15 11:32:52 by mabuqare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <stdio.h>
+# include <string.h>
 
 /* ---------------	LISTS		--------------- */
 typedef struct s_list
@@ -42,7 +43,7 @@ int		ft_isprint(int c);
 int		ft_toupper(int c);
 int		ft_tolower(int c);
 /* ---------------	STRINGS		--------------- */
-size_t	ft_strlen(char *str);
+size_t	ft_strlen(const char *str);
 size_t	ft_strlcat(char *dst, char *src, size_t size);
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
